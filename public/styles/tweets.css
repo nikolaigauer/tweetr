@@ -1,0 +1,33 @@
+header {
+  background-color: #cfe7e3;
+  border-top: transparent;
+  border-radius: 10px;
+  line-height: 3;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+article {
+  display: block;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+article:hover {
+  background-color: orange;
+}
+
+text {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+footer {
+  font-size: small;
+  padding-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+
+}
+

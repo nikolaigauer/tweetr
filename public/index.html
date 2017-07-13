@@ -6,28 +6,71 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400i,700,700i" rel="stylesheet">
+
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
+
+
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
+      <img class="logo" src="/images/bird.png">
+      <span class="header">TWEETR</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+          <form id='text-form' action="/tweets" method="POST">
+            <textarea id='textarea' type="text" name="text" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet">
+            <span id='counter' class="counter" >140</span>
+          </form>
+      </section>
+      <section class="tweets">
+<!--         <ul id="tweets">
+ -->          <article>
+            <header>
+              TWEEEETS
+            </header>
+              <span>
+                Here we go
+                Once upon a time not long ago
+                When people wore pajamas and lived life slow
+                When laws were stern and justice stood
+                And people were behavin' like they ought ta good
+                There lived a lil' boy who was miss lead
+                By another lil' boy and this is what he said:
+                "Me and you, tonight we're gonna make some cash
+                Robbin' old folks and makin' the dash"
+              </span>
+            <footer>
+              <div>
+                checkit, this is the footer
+              </div>
+            </footer>
+          </article>
+<!--         </ul>
+ -->      </section>
     </main>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </body>
 </html>
