@@ -1,3 +1,27 @@
+.new-tweet {
+  background-color: #ddd;
+  border-radius: 4px;
+  border: thin solid #bfb8b8;
+  margin-bottom: 25px;
+  padding: 0 1em .5em .5em;
+}
+
+h2 {
+  border-bottom: black solid 1px;
+  margin-top: 5px;
+}
+
+#textarea {
+  width: 100%;
+}
+
+.counter {
+  float: right;
+  font-size: small;
+  font-style: italic;
+  line-height: 25px;
+}
+
 .text-red {
   color: red;
 }

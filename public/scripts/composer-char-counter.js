@@ -9,9 +9,9 @@ $(function() {
     $(counter).text("Characters left: " + (140 - count));
       if (140 - count < 0) {
         $('#counter').addClass('text-red');
-        } else if (140 - count >= 0) {
-          $('#counter').removeClass('text-red');
-        }
+      } else if (140 - count >= 0) {
+        $('#counter').removeClass('text-red');
+      }
     console.log("a key was pushed");
     console.log(this.value);
 
