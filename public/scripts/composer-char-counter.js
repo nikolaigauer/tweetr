@@ -4,7 +4,7 @@ $(function() {
   let textArea = document.getElementById('textarea');
   let counter = document.getElementById('counter');
 
-  $(textArea).on("keyup", function() {
+  $(textArea).on("input", function() {
     let count = $(this).val().length
     $(counter).text("Characters left: " + (140 - count));
       if (140 - count < 0) {
