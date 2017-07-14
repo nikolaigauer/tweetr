@@ -5,6 +5,7 @@ $(function() {
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
  function loadTweets() {
   var newTweet = $('#text-form').val("");
 
@@ -15,7 +16,6 @@ $(function() {
       method: 'GET',
       success: function (results) {
         console.log("we are loading up!", results);
-        // newTweet.append(tweetLoad);
         renderTweets(results);
       },
       error: function () {
@@ -59,7 +59,8 @@ $(function() {
     return $tweet
   }
 
-  // $('tweet').text(renderTweets(data));
+  // WE NEED TO SANITIZE THE OUTPUT WITH THIS BELOW, BUT HOW?
+  // $('tweet').text(renderTweets());
 
   $('#text-form').on('submit', function() {
     event.preventDefault();
@@ -67,10 +68,10 @@ $(function() {
     let textLength = $('#textarea').val().length
 
     if (textLength === 0) {
-      alert("put some words in there");
+      alert("You have to write something to tweet.");
     }
     else if (textLength > 140) {
-      alert("TOO MUCH");
+      alert("You cannot tweet more than 140 characters.");
     } else {
       $.ajax({
         url: '/tweets',
