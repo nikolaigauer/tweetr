@@ -1,6 +1,5 @@
 #nav-bar {
   background-color: #00a087;
-  /*color: #e8fdff*/
   font-size: 10pt;
   height: 80px;
   left: 0;
@@ -45,12 +44,5 @@
   width: 80px; height: 80px;
   float: left;
   margin-right: 5px
-
 }
 
-
-*//*nav {
-  background-color: #00a087;
-  height: 80px;
-
-}

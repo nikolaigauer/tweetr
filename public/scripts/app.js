@@ -8,7 +8,6 @@ $(function() {
 
  function loadTweets() {
   var newTweet = $('#text-form').val("");
-
     console.log("Are we receiving anything?")
 
     $.ajax({
@@ -25,7 +24,6 @@ $(function() {
  }
 
   $('#text-form').on('submit', function () {
-
   });
 
   loadTweets();
@@ -88,4 +86,5 @@ $(function() {
       })
     }
   });
+
 })

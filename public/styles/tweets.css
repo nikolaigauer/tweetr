@@ -7,7 +7,6 @@
   border-radius: 4px;
 }
 
-
 .tweet header {
   background-color: #efefef;
   line-height: 3;
@@ -42,17 +41,14 @@
   line-height: 30px;
 }
 
-
 .tweet p {
   margin-left: 2em;
   margin-right: 2em;
 }
 
 .tweet footer {
-/*  font-size: small;
-*/  padding-top: 1em;
+  padding-top: 1em;
   margin-bottom: 1em;
   margin-left: 1em;
-
 }
 
