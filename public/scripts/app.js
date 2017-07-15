@@ -6,9 +6,12 @@ $(function() {
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- function loadTweets() {
-  var newTweet = $('#text-form').val("");
-    console.log("Are we receiving anything?")
+ // WE NEED TO SANITIZE THE OUTPUT WITH THIS BELOW, BUT HOW?
+  // $('tweet').text(renderTweets());
+
+  function loadTweets() {
+    var newTweet = $('#text-form').val("");
+    console.log("Are we receiving anything?");
 
     $.ajax({
       url:    '/tweets',
@@ -18,25 +21,30 @@ $(function() {
         renderTweets(results);
       },
       error: function () {
-      console.log("loadTweet is having an error");
+        console.log("loadTweet is having an error");
       }
-    })
- }
+    });
+  }
 
-  $('#text-form').on('submit', function () {
-  });
+  loadTweets(); // <------- what does this do?
 
-  loadTweets();
-
+  // prepending tweets to see newest tweets first
   function renderTweets(tweets) {
     for (let tweet of tweets) {
       let newTweet = createTweetElement(tweet);
-      $('.tweets').append(newTweet);
+      $('.tweets').prepend(newTweet);
     }
   }
 
   function createTweetElement(tweet) {
     console.log('Tweet Data', tweet);
+
+    function escape(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
     var $tweet = $(`<article class="tweet">
             <header>
               <img src="${tweet.user.avatars.small}" >
@@ -47,18 +55,15 @@ $(function() {
                 ${tweet.user.handle}
               </span>
             </header>
-              <p>${tweet.content.text}</p>
+              <p>${escape(tweet.content.text)}</p>
             <footer>
                 <small>
                 ${tweet.created_at}
                 </small>
             </footer>
-          </article>`)
+          </article>`);
     return $tweet
   }
-
-  // WE NEED TO SANITIZE THE OUTPUT WITH THIS BELOW, BUT HOW?
-  // $('tweet').text(renderTweets());
 
   $('#text-form').on('submit', function() {
     event.preventDefault();
@@ -66,9 +71,8 @@ $(function() {
     let textLength = $('#textarea').val().length
 
     if (textLength === 0) {
-      alert("You have to write something to tweet.");
-    }
-    else if (textLength > 140) {
+      alert("You have to write something to tweet."); // look above for better way to com with user
+    } else if (textLength > 140) {
       alert("You cannot tweet more than 140 characters.");
     } else {
       $.ajax({
@@ -78,7 +82,7 @@ $(function() {
         success: function (results) {
           console.log("Results: ", results);
           loadTweets();
-          $('#textarea').val("")
+            $('#textarea').val("")
         },
         error: function (){
           console.log("There was an error")

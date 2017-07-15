@@ -1,7 +1,7 @@
 "use strict";
 
 const userHelper    = require("../lib/util/user-helper")
-rconst express       = require('express');
+const express       = require('express');
 const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
