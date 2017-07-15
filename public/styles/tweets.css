@@ -5,6 +5,7 @@
   overflow: hidden;
   border: thin solid #bfb8b8;
   border-radius: 4px;
+  margin-bottom: .5em;
 }
 
 .tweet header {

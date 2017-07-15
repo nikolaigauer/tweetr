@@ -39,6 +39,7 @@ $(function() {
   function createTweetElement(tweet) {
     console.log('Tweet Data', tweet);
 
+    // escape function to prevent XSS
     function escape(str) {
       var div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
@@ -49,10 +50,10 @@ $(function() {
             <header>
               <img src="${tweet.user.avatars.small}" >
               <h3>
-                ${tweet.user.name}
+                ${escape(tweet.user.name)}
               </h3>
               <span>
-                ${tweet.user.handle}
+                ${escape(tweet.user.handle)}
               </span>
             </header>
               <p>${escape(tweet.content.text)}</p>
@@ -65,7 +66,7 @@ $(function() {
     return $tweet
   }
 
-  $('#text-form').on('submit', function() {
+  $('#text-form').on('submit', function(event) {
     event.preventDefault();
     console.log("Ok!")
     let textLength = $('#textarea').val().length
