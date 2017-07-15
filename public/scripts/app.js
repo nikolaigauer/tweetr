@@ -75,7 +75,7 @@ $(function() {
     event.preventDefault();
     console.log("Ok!")
     let textLength = $('#textarea').val().length
-
+    console.log("MYSTERY: ", $('#textarea').val())
     if (textLength === 0) {
       alert("You have to write something to tweet."); // look above for better way to com with user
     } else if (textLength > 140) {
@@ -86,7 +86,6 @@ $(function() {
         method: 'POST',
         data: $(this).serialize(),
         success: function (results) {
-          console.log("Results: ", results);
           loadTweets();
             $('#textarea').val("")
         },
