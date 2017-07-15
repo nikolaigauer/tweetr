@@ -61,6 +61,11 @@ $(function() {
                 <small>
                 ${tweet.created_at}
                 </small>
+                <div id="footer-icons">
+                  <i class="icon-flag"></i>
+                  <i class="icon-heart"></i>
+                  <i class="icon-retweet"></i>
+                </div>
             </footer>
           </article>`);
     return $tweet

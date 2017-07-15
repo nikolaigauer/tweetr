@@ -5,7 +5,8 @@
   overflow: hidden;
   border: thin solid #bfb8b8;
   border-radius: 4px;
-  margin-bottom: .5em;
+  margin-bottom: .5
+  em;
 }
 
 .tweet header {
@@ -19,7 +20,12 @@
   opacity: .7;
 }
 
-.tweet:hover header{
+.tweet:hover header {
+  opacity: 1;
+}
+
+
+.tweet:hover i {
   opacity: 1;
 }
 
@@ -51,5 +57,12 @@
   padding-top: 1em;
   margin-bottom: 1em;
   margin-left: 1em;
+}
+
+.tweet i {
+  opacity: 0;
+  color: #62c6b7;
+  float:  right;
+  margin-right: 1em;
 }
 
