@@ -1,6 +1,6 @@
 "use strict";
 
-// Helper functions:
+//Inserts and retrieves tweets in mongodb
 module.exports = function makeDataHelpers(db) {
   return {
 

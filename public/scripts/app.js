@@ -1,32 +1,19 @@
 $(function() {
 
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
- // WE NEED TO SANITIZE THE OUTPUT WITH THIS BELOW, BUT HOW?
-  // $('tweet').text(renderTweets());
-
   function loadTweets() {
     var newTweet = $('#text-form').val("");
-    console.log("Are we receiving anything?");
-
     $.ajax({
       url:    '/tweets',
       method: 'GET',
       success: function (results) {
-        console.log("we are loading up!", results);
         renderTweets(results);
       },
       error: function () {
-        console.log("loadTweet is having an error");
       }
     });
   }
 
-  loadTweets(); // <------- what does this do?
+  loadTweets();
 
   // prepending tweets to see newest tweets first
   function renderTweets(tweets) {
@@ -37,7 +24,6 @@ $(function() {
   }
 
   function createTweetElement(tweet) {
-    console.log('Tweet Data', tweet);
 
     // escape function to prevent XSS
     function escape(str) {
@@ -58,10 +44,10 @@ $(function() {
             </header>
               <p>${escape(tweet.content.text)}</p>
             <footer>
-                <small>
-                ${tweet.created_at}
+                <small class="timeago">
+                  ${$.timeago(tweet.created_at)}
                 </small>
-                <div id="footer-icons">
+                <div class="footer-icons">
                   <i class="icon-flag"></i>
                   <i class="icon-heart"></i>
                   <i class="icon-retweet"></i>
@@ -73,9 +59,7 @@ $(function() {
 
   $('#text-form').on('submit', function(event) {
     event.preventDefault();
-    console.log("Ok!")
     let textLength = $('#textarea').val().length
-    console.log("MYSTERY: ", $('#textarea').val())
     if (textLength === 0) {
       alert("You have to write something to tweet."); // look above for better way to com with user
     } else if (textLength > 140) {
@@ -90,7 +74,6 @@ $(function() {
             $('#textarea').val("")
         },
         error: function (){
-          console.log("There was an error")
         }
       })
     }

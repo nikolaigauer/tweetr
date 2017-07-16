@@ -13,24 +13,13 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/compose-button.js"></script>
-
   </head>
 
   <body>
-
-    <!-- Nav bar -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">TWEETR</span>
-      <button id="comp-button" type="submit" value="Compose">
+      <button id="comp-button" class="comp-button" type="submit" value="Compose">
         <div id="button-text">
           <i class="icon-edit">
           </i>
@@ -39,7 +28,6 @@
       </button>
     </nav>
 
-    <!-- Tweets -->
     <main class="container">
       <section id="new-tweet" class="new-tweet">
         <h2>
@@ -56,5 +44,16 @@
       <section id="tweets" class="tweets">
       </section>
     </main>
+
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="/vendor/timeago.js"></script>
+
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/compose-button.js"></script>
+
   </body>
 </html>
