@@ -10,9 +10,11 @@ Tweeter is a simple, single-page Twitter clone utilizing HTML, CSS, JS, jQuery a
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Screenshots
-Loading the page you will see your tweets ordered from newest to oldest. If you don't see any tweets, start tweeting! Click the Compose button in the top right corner. It toggles and reveals the tweet composer. Your tweets will show up in real time as you tweet.
+Loading the page you will see your tweets ordered from newest to oldest. If you don't see any tweets, start tweeting!
 
 ![Screenshot of tweet list](https://github.com/nikolaigauer/tweetr/blob/master/docs/Tweeter%20-%20tweet%20list.PNG?raw=true)
+
+Click the Compose button in the top right corner. It toggles and reveals the tweet composer. Your tweets will show up in real time as you tweet.
 
 ![Screenshot of tweet composer box](https://github.com/nikolaigauer/tweetr/blob/master/docs/Tweeter%20-%20new%20tweet%20toggle.PNG?raw=true)
 
