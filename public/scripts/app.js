@@ -61,7 +61,7 @@ $(function() {
     event.preventDefault();
     let textLength = $('#textarea').val().length
     if (textLength === 0) {
-      alert("You have to write something to tweet."); // look above for better way to com with user
+      alert("You have to write something to tweet.");
     } else if (textLength > 140) {
       alert("You cannot tweet more than 140 characters.");
     } else {
